@@ -11,7 +11,7 @@ const login = (req,res) => {
         if(!user){
             return res.status(401).json({message : "Invalid credentials"});
         }
-        //first row of the result array
+        
         const token = jwt.sign(
             {id:user.id,username:user.username}, // payload
             process.env.SECRET_KEY, //signature
